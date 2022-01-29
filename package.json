@@ -1,15 +1,18 @@
 {
     "name": "rules-beautify",
+	"publisher": "akris9",
     "displayName": "rules-beautify",
     "description": "",
     "version": "0.0.1",
+	"icon": "images/rules-beautify.png",
+
     "bugs": {
-        "url": "https://github.com/avinashkris9/"
+        "url": "https://github.com/avinashkris9/rules-beautify/issues"
     },
     "license": "SEE LICENSE IN LICENSE.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/avinashkris9/"
+        "url": "https://github.com/avinashkris9/rules-beautify"
     },
     "engines": {
         "vscode": "^1.63.0"

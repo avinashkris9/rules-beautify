@@ -45,7 +45,7 @@ The extension offers below configuration for users to customise the formatting.
 
 - Formatter won't work if there is a lookup table definition (inline/multiline) present on the rules.
 
-- This is a hobby project and there is no guarantee to work. If you are seeing any issues, please raise an Issue.
+- This is a hobby project and there is no guarantee to work. If you are seeing any issues, please raise a github issue.
 
 ## Acknowledgement
 

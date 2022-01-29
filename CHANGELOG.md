@@ -2,7 +2,7 @@
 
 ## [Released]
 
-## [1.0.0] - 2022-01-01
+## [issuesissues] - 29-01-2022
 ### Added
 - Initial release.
 - Implemented language formatter.
@@ -11,6 +11,4 @@
 
 ## [Unreleased]
 
-## [1.0.1] - 2022-01-01
-### Changed 
-- Refactor code
+
