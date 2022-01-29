@@ -55,13 +55,13 @@
             {
                 "language": "probe-rules",
                 "scopeName": "source.probe-rules",
-                "path": "./src/syntaxes/probe-rules.tmLanguage.json"
+                "path": "./syntaxes/probe-rules.tmLanguage.json"
             }
         ],
         "snippets": [
             {
               "language": "probe-rules",
-              "path": "./src/syntaxes/probe-rules.snippets.json"
+              "path": "./syntaxes/probe-rules.snippets.json"
             }],
         "configuration": {
             "title": "ProbeRules",

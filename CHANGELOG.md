@@ -2,7 +2,7 @@
 
 ## [Released]
 
-## [issuesissues] - 29-01-2022
+## [0.0.1] - 29-01-2022
 ### Added
 - Initial release.
 - Implemented language formatter.
