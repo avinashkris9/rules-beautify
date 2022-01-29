@@ -1,0 +1,177 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"fileTypes": ["rules","include"],
+    "name": "rules",
+    "foldingStartMarker" : "\\{\\s*$",
+    "foldingStopMarker" : "^\\s*\\}",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#functions"
+		}
+	],
+	"repository": {
+		"comments": {
+            "patterns": [{
+                "captures": {
+                    "0": {
+                        "name": "punctuation.definition.comment.rules"
+                    }
+                },
+                "match": "#.*",
+                "name": "comment.line.number-sign.rules"
+            }]
+        },
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.rules",
+				"match": "(?i)\\b(break|case|continue|default|do|else|for|if|in|return|switch|while|foreach)\\b"
+		 	},
+
+             {
+                "match": "(!|&&|\\|\\||(?<!\\$)\\b(not|or|and|xor)\\b(?!\\$))",
+                "name": "keyword.operator.logical.rules"
+            }
+	, {
+                    "match": "(<<|>>>?|~|\\^|\\||&)",
+                    "name": "keyword.operator.bitwise.rules"
+                },
+                {
+                    "match": "((&|\\^|\\||<<|>>>?)=)",
+                    "name": "keyword.operator.assignment.bitwise.rules"
+                },
+
+                {
+                    "match": "(==|!=|<=?|>=?)",
+                    "name": "keyword.operator.comparison.rules"
+                },
+                {
+                    "match": "(([+*/%-]|\\~)=)",
+                    "name": "keyword.operator.assignment.arithmetic.rules"
+                },
+                {
+                    "match": "(=)",
+                    "name": "keyword.operator.assignment.rules"
+                }
+		
+	]
+		},
+		"strings": {
+            "patterns": [{
+			"name": "string.quoted.double.rules",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.rules",
+					"match": "\\\\."
+				}
+			]
+            }
+        ]
+
+		},
+		"variables": {
+			"patterns": [{
+                "match": "@[\\w_-]+",
+                "name": "storage.type.annotation.rules",
+				"comment": "objectserver assignment"
+            },{
+                "match": "%[\\w_-]+",
+                "name": "variable.language.other.rules",
+				"comment": "arrays"
+            },
+			{
+                "match": "\\$[\\w_-]+",
+                "name": "variable.language.other.rules",
+				"comment": "variables"
+            },
+            {
+                "match": "(\\$\\([^)]+\\))",
+                "name": "variable.parameter.rules",
+				"comment": "objectserver assignment"
+            }]
+		},
+
+		"functions": {
+			"patterns": [
+				
+				{
+                    "match": "(?<!\\$)\\b(true|false|null)\\b(?!\\$)",
+                    "name": "constant.language.rules"
+                }
+            ,
+                {
+                    "match": "(?<!\\$)\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b(?!\\$)",
+                    "name": "constant.numeric.rules"
+                },
+               
+                {
+                    "match": "(?<!\\$)\\b(getdate|datetotime|timetodate)\\b(?!\\$)",
+                    "name": "support.function.time.rules"
+                },
+                {
+                    "match": "(?<!\\$)\\b(discard|discarded|recover|remove)\\b(?!\\$)",
+                    "name": "support.function.element.rules"
+                },
+                {
+                    "match": "(?<!\\$)\\b(getenv|gethostaddr|gethostname|getpid|getplatform|hostname)\\b(?!\\$)",
+                    "name": "support.function.host.rules"
+                },
+                {
+                    "match": "(?<!\\$)\\b(int|real|toBase)\\b(?!\\$)",
+                    "name": "support.function.arithmetic.rules"
+                },
+                {
+                    "match": "(?i)(?<!\\$)\\b(log|setlog)\\b(?!\\$)",
+                    "name": "support.function.logging.rules"
+                },
+                {
+                    "match": "(?<!\\$)\\b(updateload|getload)\\b(?!\\$)",
+                    "name": "support.function.load.rules"
+                },
+                {
+                    "match": "(?<!\\$)\\b(charcount|clear|contains|expand|extract|length|lower|ltrim|match|md5_hash|nmatch|nvp_add|nvp_remove|printable|regmatch|regreplace|rtrim|scanformat|split|substr|upper)\\b(?!\\$)",
+                    "name": "support.function.string.rules"
+                },
+                {
+                    "match": "(?<!\\$)\\b(decimaltoascii|decimaltohex|hextimetostring|hextoascii|hextodecimal)\\b(?!\\$)",
+                    "name": "support.function.snmp.rules"
+                },
+                {
+                    "match": "(?<!\\$)\\b(test|test|test|test|test|test)\\b(?!\\$)",
+                    "name": "support.function.test.rules"
+                },
+                {
+                    "match": "(?i)(?<!\\$)\\b(details|exists|lookup|registertarget|genevent|service|update)\\b(?!\\$)",
+                    "name": "support.function.rules"
+                },
+
+                {
+                    "match": "(?<!\\$)\\b(include|array)\\b(?!\\$)",
+                    "name": "support.class.rules"
+                },
+
+                {
+                    "match": "([_$]*[a-z][a-zA-Z0-9_$]*)(<|\\(|\\s+=>)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.name.function.rules"
+                        }
+                    }
+                }]
+		}
+	},
+	"scopeName": "source.probe-rules"
+}

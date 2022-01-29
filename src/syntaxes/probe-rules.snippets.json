@@ -1,0 +1,30 @@
+{
+	"Comment Block": {
+		"prefix": "###",
+		"body": [
+			"################################################################",
+			"# ${0:@TODO ADD COMMENT HERE}",
+            "################################################################"
+		],
+		"description": "Create a comment block"
+	},
+
+	"Add a log": {
+		"prefix": "log",
+		"body": "log(${1|DEBUG,INFO,WARNING,ERROR,FATAL|}, $0)",
+		"description": "Insert a log statement"
+	},
+
+	"Extract Block":
+	{
+		"prefix": "extract",
+		"body": ["if (regmatch(${1:variable}, ${2:regex}))",
+		"{",
+		"   ${3:assignment} = extract(${1:variable}, ${2:regex})",
+		"}"
+
+	],
+		"description": "Regular Expression regmatch with extract"
+	}
+
+}
