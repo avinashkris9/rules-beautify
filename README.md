@@ -43,7 +43,7 @@ The extension offers below configuration for users to customise the formatting.
 
 - The formatter is a stupid formatter which uses regex replace for formatting. I am hoping someone will build or re-use a real AST parser and a proper formatter for rules language in future :).
 
-- Formatter won't work if there is a lookup table definition (inline/multiline) present on the rules.
+- Formatter won't work if there is a lookup table definition (inline/multiline) present on the rules. The indentation will be unpredictable. Only works if lookup as an include file. 
 
 - This is a hobby project and there is no guarantee to work. If you are seeing any issues, please raise a github issue.
 
